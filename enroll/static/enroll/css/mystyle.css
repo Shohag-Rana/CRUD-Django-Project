@@ -1,0 +1,23 @@
+.head{
+	padding-top: 65px;
+	padding-bottom: 65px;
+	background-color: #e8ecef;
+}
+.clr{
+	color: #373341;
+}
+nav{
+	padding: 30px;
+}
+img{
+	height: 250px !important;
+	width: 100% !important;
+}
+.foot{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color: #e8ecef;
+}
+@media screen and (max-width: 280px){
+	.p1{display: none;}
+}

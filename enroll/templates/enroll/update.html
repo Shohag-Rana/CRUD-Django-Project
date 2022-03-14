@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'enroll/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'enroll/font/css/all.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'enroll/css/mystyle3.css' %}">
+    <title>Update data</title>
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div class="row text-center">
+            <div class="col-2"></div>
+            <div class="col-8 text-center">
+                <h3 class="mb-4">Update student information</h3>
+                <form action="" method="post" novalidate>
+                    {% csrf_token %}
+                    {% for f in form %}
+                    <div class="row">
+                        <div class="col-2">
+                            {{f.label}}
+                        </div>
+                        <div class="col-10">
+                            {{f}}
+                        </div>
+                    </div>
+                     <br>
+                    {% endfor %}
+                    <input type="submit" class="btn btn-outline-Success text-dark bg-danger mr-5" value="Update">
+                    <a href="{% url 'home' %}" type="button" class="btn btn-outline-primary ml-5 bg-primary text-dark">Back Home</a></td>
+                </form>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

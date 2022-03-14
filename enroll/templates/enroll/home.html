@@ -1,0 +1,52 @@
+{% extends 'enroll/base.html' %}
+{% load static %}
+{% block title%}home page{% endblock title %}
+{% block style1 %}
+    <link rel="stylesheet" type="text/css" href="{% static 'enroll/css/mystyle3.css' %}">
+{% endblock style1 %}
+{% block headline %}
+     <h2 class="text-center text-light bg-secondary">Create Read Update and Delete Student data of a School</h2>           
+{% endblock headline %}
+{% block content1 %}
+    <h3 class="text-dark bg-warning text-center">ADD STUDENT</h3>
+    <form action="" method="post" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+    
+{% endblock content1 %}
+{% block content2 %}
+<h3 class="text-dark bg-warning text-center">Show Details</h3>
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+          <th>Id</th>
+        <th>Firstname</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Image</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% if student_data %}
+            {% for data in student_data %}
+                <tr>
+                    <td>{{data.id}}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.email}}</td>
+                    <td>{{data.passcode}}</td>
+                    <td><img src="{% static 'data.image' %}" alt=""></td>
+                    <td><a href="{% url 'update' data.id %}" type="button" class="btn btn-outline-warning">Update</a></td>
+                    <td><a href="{% url 'delete' data.id %}" type="button" class="btn btn-outline-danger">Delete</a></td>
+                </tr>
+            {% endfor %}
+        {% else %}
+        <h4>There is no data found here</h4>
+        {% endif %}
+        
+    </tbody>
+  </table>
+{% endblock content2 %}

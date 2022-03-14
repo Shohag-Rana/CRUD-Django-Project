@@ -1,0 +1,56 @@
+.head-section{
+	padding: 25px 0px;
+	background-color: white;
+	border-bottom: 1px solid silver;
+
+}
+.l1{
+	color: #999999;
+}
+.banner{
+	background-image: url('../images/sunrise.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+ 	padding-top: 100px;
+ 	padding-bottom: 100px;
+}
+*{
+	font-family: Helvetical TStd Bold;
+}
+.s1{
+	margin-top: 44px;
+	margin-bottom: 44px;
+}
+.s2{
+	margin-bottom: 100px;
+}
+
+.f1{
+	background-color: #e5e5e5;
+}
+
+.s3{
+	margin-bottom: 40px;
+}
+.s4{
+	height: 100px;
+	width: 100%;
+}
+.s6{
+	color: #19a0a0;
+}
+footer{
+	background-color: #ffffff;
+	 
+}
+.footer-section{
+	padding: 2px 0px;
+	background-color: white;
+	 
+}
+
+@media screen and (max-width: 768px){
+	.p1{
+		display: none;
+	}
+ }
